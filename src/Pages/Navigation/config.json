@@ -1,0 +1,20 @@
+{
+    "overlaps": {
+        "start": {
+            "name": "start",
+            "link" : "/"
+        },
+        "newProject": {
+            "name": "new project",
+            "link" : "/new_project"
+        },
+        "chooseProject": {
+            "name": "choose project",
+            "link" : "/choose_project"
+        },
+        "settings": {
+            "name": "settings",
+            "link" : "/settings"
+        }
+    }
+} 
