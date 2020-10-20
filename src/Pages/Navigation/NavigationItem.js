@@ -1,18 +1,28 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 import { NavigationItemStyled } from './Navigation.scss';
 
-const NavigationItem = ({ children, link, clicked }) => {
+const NavigationItem = ({ children, link, clicked, show }) => {
 
+    const activeLinkStyle = {
+        fontWeight: "bold",
+        color: 'gold'
+    }
+    if(!show) {
+        return null;
+    }
 
     return (
         <NavigationItemStyled
             onClick={() => clicked(false)}
             className='navigationItems'>
-            <Link to={link}>
+            <NavLink
+                exact
+                activeStyle={activeLinkStyle}
+                to={link}>
                 {children}
-            </Link>
+            </NavLink>
         </NavigationItemStyled>
     )
 }

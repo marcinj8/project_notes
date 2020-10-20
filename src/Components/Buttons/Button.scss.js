@@ -27,7 +27,7 @@ export const ProjectTileButtonStyled = styled(ButtonStyled)`
 `;
 
 export const MenuButtonStyled = styled(ButtonStyled)`
-    position: absolute;
+    position: fixed;
     padding: 8px;
     left: 2%;
     top: 2%;

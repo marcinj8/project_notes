@@ -37,5 +37,5 @@ export const NavigationItemStyled = styled.li`
         color: ${props => props.theme.color.font.light};
         text-decoration: none;
         text-transform: uppercase;
-}
+    }
 `

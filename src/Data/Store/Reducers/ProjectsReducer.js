@@ -14,7 +14,7 @@ const initialState = {
 const projectsReducer = (state = initialState, action) => {
     switch (action.type) {
         case actionTypes.LOADING_STARTED: return {...state, loading: true};
-        case actionTypes.LOADING_SUCCESS: return {...state, loading: false, isLoaded: true };
+        case actionTypes.LOADING_SUCCESS: return {...state, loading: false, isLoaded: true, projects: action.data };
         case actionTypes.ERROR_OCCURED: return state;
         default: return state
     }

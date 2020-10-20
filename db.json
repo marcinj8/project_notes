@@ -1,0 +1,169 @@
+{
+  "projects": {
+      "someKey1": {
+          "name": "project 1 name",
+          "status": "finished",
+          "startDate": "25-08-2020",
+          "deadLineDate": "25-12-2020",
+          "repository": "www.link.pl",
+          "onLine": false,
+          "projectAssumptions": [],
+          "notes": [
+              "note1",
+              "note2",
+              "note3"
+          ],
+          "toDo": {
+              "toDo 1": {
+                  "isActive": true,
+                  "status": "new",
+                  "priority": "high",
+                  "description": "toDo 1 description",
+                  "toDoNote": [
+                      "toDo 1 note 1",
+                      "toDo 1 note 2",
+                      "toDo 1 note 3"
+                  ]
+              }
+          }
+      },
+      "someKey2": {
+          "name": "project 2 name",
+          "status": "planning",
+          "startDate": "25-08-2020",
+          "deadLineDate": "25-12-2020",
+          "repository": "www.link.pl",
+          "onLine": "",
+          "projectAssumptions": [
+              "note 1",
+              "note 2",
+              "note 3"
+          ],
+          "notes": [
+              "note1"
+          ],
+          "toDo": {}
+      },
+      "someKey3": {
+          "name": "project 3 name",
+          "status": "production",
+          "startDate": "25-08-2020",
+          "deadLineDate": "25-12-2020",
+          "repository": "",
+          "onLine": "www.online.pl",
+          "projectAssumptions": [
+              "note 1",
+              "note 2",
+              "note 3"
+          ],
+          "notes": [
+              "note1",
+              "note2",
+              "note3"
+          ],
+          "toDo": {
+              "toDo 1": {
+                  "isActive": true,
+                  "status": "in progress",
+                  "priority": "high",
+                  "description": "toDo 1 description",
+                  "toDoNote": [
+                      "toDo 1 note 1",
+                      "toDo 1 note 2",
+                      "toDo 1 note 3"
+                  ]
+              },
+              "toDo 2": {
+                  "isActive": false,
+                  "status": "rejected",
+                  "priority": "low",
+                  "description": "toDo 2 description",
+                  "toDoNote": [
+                      "toDo 2 note 1",
+                      "toDo 2 note 2",
+                      "toDo 2 note 3"
+                  ]
+              }
+          }
+      },
+      "someKey4": {
+          "name": "project 4 name",
+          "status": "production",
+          "startDate": "25-08-2020",
+          "deadLineDate": "25-12-2020",
+          "repository": "www.link.pl",
+          "onLine": "www.online.pl",
+          "projectAssumptions": [
+              "note 1"
+          ],
+          "notes": [
+              "note1",
+              "note2",
+              "note3"
+          ],
+          "toDo": {
+              "toDo 1": {
+                  "isActive": true,
+                  "status": "in progress",
+                  "priority": "high",
+                  "description": "toDo 2 description",
+                  "toDoNote": [
+                      "toDo 2 note 1",
+                      "toDo 1 note 2",
+                      "toDo 1 note 3"
+                  ]
+              },
+              "toDo 2": {
+                  "isActive": false,
+                  "status": "rejected",
+                  "priority": "low",
+                  "description": "toDo 2 description",
+                  "toDoNote": [
+                      "toDo 2 note 1"
+                  ]
+              }
+          }
+      },
+      "someKey5": {
+          "name": "project 5 very very very very long name",
+          "status": "production",
+          "startDate": "25-08-2020",
+          "deadLineDate": "25-12-2020",
+          "repository": "www.link.pl",
+          "onLine": "",
+          "projectAssumptions": [
+              "note 1"
+          ],
+          "notes": [
+              "note1",
+              "note2",
+              "note3"
+          ],
+          "toDo": {
+              "toDo 1": {
+                  "isActive": true,
+                  "status": "in progress",
+                  "priority": "high",
+                  "description": "toDo 1 description",
+                  "toDoNote": [
+                      "toDo 1 note 1",
+                      "toDo 1 note 2",
+                      "toDo 1 note 3"
+                  ]
+              },
+              "toDo 2": {
+                  "isActive": false,
+                  "status": "rejected",
+                  "priority": "low",
+                  "description": "toDo 2 description",
+                  "toDoNote": [
+                      "toDo 2 note 1"
+                  ]
+              }
+          }
+      }
+  },
+  "history": {
+      "lastEdited": ""
+  }
+}

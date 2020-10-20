@@ -7,10 +7,13 @@ const loadingStarted = () => ({
     loadedData: 'typeOfData'
 })
 
-const showData = res => ({
-    type: actionTypes.LOADING_SUCCESS,
-    data: res.data
-})
+const showData = res => {
+    console.log(res)
+    return ({
+        type: actionTypes.LOADING_SUCCESS,
+        data: res.data
+    })
+}
 
 const reportError = err => {
     return {
@@ -22,37 +25,11 @@ const reportError = err => {
     }
 };
 
-const getFakeData = (success) => { // production
+export const getData = () => {
     return dispatch => {
         dispatch(loadingStarted());
-        console.log('fake data started with succes set on: ' + success);
-        if (success) {
-            dispatch(showData({
-                data: 'data'
-            }))
-        } else if (!success) {
-            dispatch(reportError({
-                message: 'controlled error MJ'
-            }))
-        }
+        axios.get('http://localhost:3001/projects')
+            .then(res => dispatch(showData(res)))
+            .catch(err => dispatch(reportError(err)))
     }
 }
-
-export const getData = () => {
-    // production
-    // getFakeData();
-    return dispatch => {
-        // production
-        dispatch(getFakeData(true));
-        // production
-
-        // dispatch(loadingStarted());
-        // axios.get('https://mypss-84b62.firebaseio.com/.json')
-        //     .then(res => dispatch(showData(res)))
-        //     .catch(err => dispatch(reportError(err)))
-    }
-}
-
-
-
-

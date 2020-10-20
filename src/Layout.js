@@ -1,28 +1,30 @@
 import React, { useState } from 'react';
+import { connect } from 'react-redux';
 import {
     Router,
     Switch,
     Route,
 } from "react-router-dom";
 
-import Navigation from './Pages/Navigation/Navigation';
-
 import { LayoutStyled, ContainerStyled } from './Layout.scss';
-import { Footer } from './Pages';
-import { Button } from './Components';
+import { Footer, ProjectsListContainer, Navigation, Home, Project } from './Pages';
+import { Button, Modal } from './Components';
 
 import { ShowWindowDimensions, createBrowserHistory } from './Utils'
 
-const Layout = () => {
+const Layout = ({ loading, isLoaded }) => {
 
     const [isNavbarOpen, toggleNavbar] = useState(false);
     const width = window.innerWidth
-    console.log(width)
+    // console.log(width)
     const footerConfig = {
         background: 'silver'
     }
+    // console.log(ShowWindowDimensions())
 
-    console.log(ShowWindowDimensions())
+    if (loading) {
+       return <Modal>Loading...</Modal>
+    }
 
     return (
         <Router history={createBrowserHistory}>
@@ -37,16 +39,21 @@ const Layout = () => {
                     <Switch>
                         <Route path="/settings">
                             settings
-                    </Route>
+                        </Route>
                         <Route path="/new_project">
                             new_project
-                    </Route>
+                        </Route>
                         <Route path="/choose_project">
-                            choose_project
-                    </Route>
-                        <Route path="/">
-                            start
-                    </Route>
+                            <ProjectsListContainer 
+                                isLoaded={isLoaded}
+                            />
+                        </Route>
+                        <Route path="/project/:projectId">
+                            <Project />
+                        </Route>
+                        <Route exact path="/">
+                            <Home />
+                        </Route>
                     </Switch>
                 </ContainerStyled>
                 <Footer config={footerConfig}>
@@ -57,4 +64,11 @@ const Layout = () => {
     )
 }
 
-export default Layout;
+const mapStateToProps = state => {
+    return {
+        loading: state.projectsReducer.loading,
+        isLoaded: state.projectsReducer.isLoaded
+    }
+}
+
+export default connect(mapStateToProps)(Layout);

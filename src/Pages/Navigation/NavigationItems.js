@@ -16,7 +16,9 @@ const NavigationItems = ({ clicked, toggleNavbar }) => {
                 clicked={toggleNavbar}
                 className='navigationItems'
                 link={OVERLAPS[item].link}
-                key={item}>
+                key={item}
+                show={OVERLAPS[item].show}
+                >
                 {OVERLAPS[item].name}
             </NavigationItem>
         )

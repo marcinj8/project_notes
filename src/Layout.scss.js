@@ -13,8 +13,8 @@ export const ContainerStyled = styled.article`
     height: 100%;
     min-height: 100vh;
     margin: 0 auto;
-    padding: 3%;
-    background: green;
+    padding: 1%;
+    overflow: auto;
 
     @media(min-width: 600px) {
         width: 90%;
