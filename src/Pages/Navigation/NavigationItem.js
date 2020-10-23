@@ -1,15 +1,33 @@
-import React from 'react';
+import React, { useMemo } from 'react';
+import { connect } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 
 import { NavigationItemStyled } from './Navigation.scss';
 
-const NavigationItem = ({ children, link, clicked, show }) => {
+const NavigationItem = ({ children, link, clicked, show, isExactRequired, projectKeyReducer }) => {
 
-    const activeLinkStyle = {
+    let activeLinkStyle = {
         fontWeight: "bold",
         color: 'gold'
-    }
-    if(!show) {
+    };
+    const linkPath = useMemo(() => {
+        if (link === '/project') {
+            if (projectKeyReducer === '') {
+                activeLinkStyle = {
+                    fontWeight: "bold",
+                    color: 'red'
+                };
+                return '/choose_project';
+            } else {
+                return link + '/' + projectKeyReducer;
+            }
+        }
+        else {
+            return link;
+        }
+    }, [projectKeyReducer, link])
+
+    if (!show) {
         return null;
     }
 
@@ -18,13 +36,19 @@ const NavigationItem = ({ children, link, clicked, show }) => {
             onClick={() => clicked(false)}
             className='navigationItems'>
             <NavLink
-                exact
+                exact={isExactRequired}
                 activeStyle={activeLinkStyle}
-                to={link}>
+                to={linkPath}>
                 {children}
             </NavLink>
         </NavigationItemStyled>
     )
 }
 
-export default NavigationItem;
+const mapStateToProps = state => {
+    return {
+        projectKeyReducer: state.singleProjectReducer.currentProjectKey
+    }
+}
+
+export default connect(mapStateToProps)(NavigationItem);

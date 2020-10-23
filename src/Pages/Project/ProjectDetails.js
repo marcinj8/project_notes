@@ -1,7 +1,7 @@
 import React from 'react';
 
 const ProjectDetails = ({ project }) => {
-    console.log(project.deadLIneDate)
+    // console.log(project)
     return (
         <div>
             <div>

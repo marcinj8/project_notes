@@ -2,7 +2,6 @@ import React from 'react';
 import { Modal } from '../Modal';
 
 const StatusHandler = ({ status, error = null }) => {
-    console.log(status)
     if (error !== null) {
         console.log(error)
         return (

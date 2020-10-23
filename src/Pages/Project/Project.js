@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useMemo } from 'react';
+import { connect } from 'react-redux';
 import { useQuery } from 'react-query';
 import { withRouter } from 'react-router-dom';
 
@@ -7,17 +8,18 @@ import ProjectDetails from './ProjectDetails';
 import { StatusHandler } from '../../Components';
 
 const Project = (props) => {
-    // console.log(props, props.match.params.projectId);
-    const projectId = props.match.params.projectId;
-    const { data, status, isLoading, error } = useQuery(
+    const projectId = useMemo(() => {
+        return props.match.params.projectId
+    }, [props.match.params.projectId])
+
+    const { data, status, error } = useQuery(
         ['projectData', projectId],
         fetchProjectData
     );
 
     let choosedProject = null;
-
     if (status === 'success') {
-        choosedProject = data.data[projectId];
+        choosedProject = data.data[projectId]; // filtrowanie projektu przy braku możliwości pobrania konkretnego projektu
     } else {
         return (
             <StatusHandler
@@ -26,7 +28,6 @@ const Project = (props) => {
             />
         )
     };
-    // console.log(data, status, isLoading, error);
 
     return (
         <div>

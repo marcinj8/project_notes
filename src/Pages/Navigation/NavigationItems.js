@@ -8,7 +8,7 @@ import { NavigationItemsListStyled } from './Navigation.scss';
 
 const OVERLAPS = navConfig.overlaps;
 
-const NavigationItems = ({ clicked, toggleNavbar }) => {
+const NavigationItems = ({ toggleNavbar }) => {
 
     const navigationItems = Object.keys(OVERLAPS).map(item => {
         return (
@@ -18,6 +18,7 @@ const NavigationItems = ({ clicked, toggleNavbar }) => {
                 link={OVERLAPS[item].link}
                 key={item}
                 show={OVERLAPS[item].show}
+                isExactRequired={OVERLAPS[item].exactPathRequired}
                 >
                 {OVERLAPS[item].name}
             </NavigationItem>

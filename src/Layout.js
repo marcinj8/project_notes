@@ -7,7 +7,7 @@ import {
 } from "react-router-dom";
 
 import { LayoutStyled, ContainerStyled } from './Layout.scss';
-import { Footer, ProjectsListContainer, Navigation, Home, Project } from './Pages';
+import { Footer, ProjectsListContainer, Navigation, Home, Project, NewProject } from './Pages';
 import { Button, Modal } from './Components';
 
 import { ShowWindowDimensions, createBrowserHistory } from './Utils'
@@ -38,10 +38,10 @@ const Layout = ({ loading, isLoaded }) => {
                 <ContainerStyled>
                     <Switch>
                         <Route path="/settings">
-                            settings
+                            settings - no container yet
                         </Route>
                         <Route path="/new_project">
-                            new_project
+                            <NewProject />
                         </Route>
                         <Route path="/choose_project">
                             <ProjectsListContainer 

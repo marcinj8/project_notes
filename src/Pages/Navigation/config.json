@@ -3,27 +3,32 @@
         "start": {
             "name": "start",
             "link" : "/",
-            "show": true
+            "show": true,
+            "exactPathRequired": true
         },
         "newProject": {
             "name": "new project",
             "link" : "/new_project",
-            "show": true
+            "show": true,
+            "exactPathRequired": true
         },
         "chooseProject": {
             "name": "choose project",
             "link" : "/choose_project",
-            "show": true
+            "show": true,
+            "exactPathRequired": true
         },
         "project": {
             "name": "project",
             "link" : "/project",
-            "show": true
+            "show": true,
+            "exactPathRequired": false
         },
         "settings": {
             "name": "settings",
             "link" : "/settings",
-            "show": true
+            "show": true,
+            "exactPathRequired": true
         }
     }
 } 

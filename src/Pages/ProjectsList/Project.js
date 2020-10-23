@@ -1,18 +1,25 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
+import * as actions from '../../Data/Store/Actions/SingleProjectActions';
 import ListCreator from '../../Components/List/LstCreator';
 
 import { ProjectViewStyled, ProjectHeaderStyled, ProjectWarningStyled } from './ProjectsList.scss';
 
-const Project = ({ project, choosedProjectHandlerOnClick, id }) => {
+const Project = ({ project, choosedProjectHandlerOnClick, id, setCurrentProject }) => {
 
+    const onClickHandler = () => {
+        choosedProjectHandlerOnClick();
+        setCurrentProject(id, project.name)
+    }
+    
     return (
         <ProjectViewStyled >
-            <Link 
+            <Link
                 to={'/project/' + id}
-                >
-                <ProjectHeaderStyled onClick={choosedProjectHandlerOnClick}>
+            >
+                <ProjectHeaderStyled onClick={onClickHandler}>
                     {project.name}
                 </ProjectHeaderStyled>
             </Link>
@@ -89,6 +96,10 @@ const Project = ({ project, choosedProjectHandlerOnClick, id }) => {
     )
 }
 
+const mapDipsatchToProps = dispatch => {
+    return {
+        setCurrentProject: (...args) => dispatch(actions.setCurrentProject(...args))
+    }
+}
 
-
-export default Project;
+export default connect(null, mapDipsatchToProps)(Project);
