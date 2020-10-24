@@ -1,0 +1,103 @@
+{
+    "main": {
+        "projectName": {
+            "elementType": "inputText",
+            "label": "project name",
+            "placeholder": "name",
+            "value": "string"
+        },
+        "projectStatus": {
+            "elementType": "select",
+            "label": "project status",
+            "options": [
+                "new",
+                "planing",
+                "production",
+                "finished",
+                "updating",
+                "bug fixing"
+            ]
+        },
+        "projectStartDate": {
+            "elementType": "inputDate",
+            "label": "start date",
+            "value": "string"
+        },
+        "projectDeadLine": {
+            "elementType": "inputDate",
+            "label": "deadline",
+            "value": "string"
+        },
+        "repositoryLink": {
+            "elementType": "inputText",
+            "label": "repository",
+            "placeholder": "web address",
+            "value": "string"
+        },
+        "onlineAddrss": {
+            "elementType": "inputText",
+            "label": "online ",
+            "placeholder": "web addres",
+            "value": "string"
+        },
+        "projectAssumptions": {
+            "elementType": "inputText",
+            "label": "assumptions",
+            "placeholder": "assumption",
+            "numberOfInputs": 1,
+            "value": "array"
+        },
+        "projectNotes": {
+            "elementType": "inputText",
+            "label": "project notes",
+            "placeholder": "note",
+            "numberOfInputs": 1,
+            "value": "array"
+        },
+        "toDo": {
+            "elementType": "inputText",
+            "label": "project todos",
+            "placeholder": "todo",
+            "numberOfInputs": 1,
+            "value": "object"
+        }
+    },
+    "secondary": {
+        "todoDetails": {
+            "isActive": true,
+            "todoStatus": {
+                "elementType": "select",
+                "label": "todo status",
+                "options": [
+                    "new",
+                    "in process",
+                    "resolved",
+                    "failed",
+                    "rejected"
+                ]
+            },
+            "priority":{
+                "elementType": "select",
+                "label": "priority",
+                "options": [
+                    "low",
+                    "medium",
+                    "high"
+                ]
+            },
+            "description":{
+                "elementType": "inputText",
+                "label": "project description",
+                "placeholder": "description",
+                "value": "string"
+            } ,
+            "toDoNote": {
+                "elementType": "inputText",
+                "label": "todo notes",
+                "placeholder": "todo note",
+                "numberOfInputs": 1,
+                "value": "array"
+            }
+        }
+    }
+}

@@ -1,14 +1,14 @@
 {
   "projects": {
       "someKey1": {
-          "name": "project 1 name",
-          "status": "finished",
-          "startDate": "25-08-2020",
-          "deadLineDate": "25-12-2020",
-          "repository": "www.link.pl",
-          "onLine": false,
+          "projectName": "project 1 name",
+          "projectStatus": "finished",
+          "projectStartDate": "25-08-2020",
+          "projectDeadLine": "25-12-2020",
+          "repositoryLink": "www.link.pl",
+          "onlineAddrss": false,
           "projectAssumptions": [],
-          "notes": [
+          "projectNotes": [
               "note1",
               "note2",
               "note3"
@@ -28,35 +28,35 @@
           }
       },
       "someKey2": {
-          "name": "project 2 name",
-          "status": "planning",
-          "startDate": "25-08-2020",
-          "deadLineDate": "25-12-2020",
-          "repository": "www.link.pl",
-          "onLine": "",
+          "projectName": "project 2 name",
+          "projectStatus": "planning",
+          "projectStartDate": "25-08-2020",
+          "projectDeadLine": "25-12-2020",
+          "repositoryLink": "www.link.pl",
+          "onlineAddrss": "",
           "projectAssumptions": [
               "note 1",
               "note 2",
               "note 3"
           ],
-          "notes": [
+          "projectNotes": [
               "note1"
           ],
           "toDo": {}
       },
       "someKey3": {
-          "name": "project 3 name",
-          "status": "production",
-          "startDate": "25-08-2020",
-          "deadLineDate": "25-12-2020",
-          "repository": "",
-          "onLine": "www.online.pl",
+          "projectName": "project 3 name",
+          "projectStatus": "production",
+          "projectStartDate": "25-08-2020",
+          "projectDeadLine": "25-12-2020",
+          "repositoryLink": "",
+          "onlineAddrss": "www.online.pl",
           "projectAssumptions": [
               "note 1",
               "note 2",
               "note 3"
           ],
-          "notes": [
+          "projectNotes": [
               "note1",
               "note2",
               "note3"
@@ -87,16 +87,16 @@
           }
       },
       "someKey4": {
-          "name": "project 4 name",
-          "status": "production",
-          "startDate": "25-08-2020",
-          "deadLineDate": "25-12-2020",
-          "repository": "www.link.pl",
-          "onLine": "www.online.pl",
+          "projectName": "project 4 name",
+          "projectStatus": "production",
+          "projectStartDate": "25-08-2020",
+          "projectDeadLine": "25-12-2020",
+          "repositoryLink": "www.link.pl",
+          "onlineAddrss": "www.online.pl",
           "projectAssumptions": [
               "note 1"
           ],
-          "notes": [
+          "projectNotes": [
               "note1",
               "note2",
               "note3"
@@ -125,16 +125,16 @@
           }
       },
       "someKey5": {
-          "name": "project 5 very very very very long name",
-          "status": "production",
-          "startDate": "25-08-2020",
-          "deadLineDate": "25-12-2020",
-          "repository": "www.link.pl",
-          "onLine": "",
+          "projectName": "project 5 very very very very long name",
+          "projectStatus": "production",
+          "projectStartDate": "25-08-2020",
+          "projectDeadLine": "25-12-2020",
+          "repositoryLink": "www.link.pl",
+          "onlineAddrss": "",
           "projectAssumptions": [
               "note 1"
           ],
-          "notes": [
+          "projectNotes": [
               "note1",
               "note2",
               "note3"

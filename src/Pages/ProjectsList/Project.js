@@ -11,7 +11,7 @@ const Project = ({ project, choosedProjectHandlerOnClick, id, setCurrentProject 
 
     const onClickHandler = () => {
         choosedProjectHandlerOnClick();
-        setCurrentProject(id, project.name)
+        setCurrentProject(id, project.projectName)
     }
     
     return (
@@ -20,26 +20,26 @@ const Project = ({ project, choosedProjectHandlerOnClick, id, setCurrentProject 
                 to={'/project/' + id}
             >
                 <ProjectHeaderStyled onClick={onClickHandler}>
-                    {project.name}
+                    {project.projectName}
                 </ProjectHeaderStyled>
             </Link>
             <div>
                 <div>
-                    Status: {project.status}
+                    Status: {project.projectStatus}
                 </div>
                 <div>
-                    Start date: {project.startDate}
+                    Start date: {project.projectStartDate}
                 </div>
                 <div>
-                    Dead line: {project.deadLineDate}
+                    Deadline: {project.projectDeadLine}
                 </div>
                 {
-                    project.repository.length > 0
+                    project.repositoryLink.length > 0
                         ? (
                             <div>
                                 Repository:
-                                <a href={project.repository} to={project.repository}>
-                                    {project.repository}
+                                <a href={project.repositoryLink} to={project.repositoryLink}>
+                                    {project.repositoryLink}
                                 </a>
                             </div>
                         )
@@ -50,12 +50,12 @@ const Project = ({ project, choosedProjectHandlerOnClick, id, setCurrentProject 
                         )
                 }
                 {
-                    project.onLine.length > 0
+                    project.onlineAddrss.length > 0
                         ? (
                             <div>
                                 Website:
-                                <a href={project.onLine} to={project.onLine}>
-                                    {project.onLine}
+                                <a href={project.onlineAddrss} to={project.onlineAddrss}>
+                                    {project.onlineAddrss}
                                 </a>
                             </div>
                         )
@@ -74,10 +74,10 @@ const Project = ({ project, choosedProjectHandlerOnClick, id, setCurrentProject 
                     )
                     : null
                 }
-                {project.notes.length > 0
+                {project.projectNotes.length > 0
                     ? (
                         <ListCreator
-                            list={project.notes}
+                            list={project.projectNotes}
                             header='Notes'
                         />
                     )

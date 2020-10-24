@@ -5,7 +5,7 @@ const ProjectDetails = ({ project }) => {
     return (
         <div>
             <div>
-                {project.deadLineDate}
+                {project.projectDeadLine}
             </div>
             <button>edit</button>
         </div>

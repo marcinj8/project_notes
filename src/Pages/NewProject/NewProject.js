@@ -1,15 +1,20 @@
 import React from 'react';
 
+import { FormGenerator } from '../../Components';
+
+import formData from './newProjectProperties.json';
+
 class NewProject extends React.Component {
-    state= {
-        name: "",
-        status: "new, planing, production, finished",
-        startDate: "",
-        deadLineDate: "",
-        repository: "link",
-        onLine: 'link',
+    state = {
+        projectName: "",
+        projectStatus: "new, planing, production, finished",
+        isActive: true,
+        projectStartDate: "",
+        projectDeadLine: "",
+        repositoryLink: "link",
+        onlineAddrss: 'link',
         projectAssumptions: [],
-        notes: [],
+        projectNotes: [],
         toDo: {
             "toDo 1": {
                 isActive: 'true false',
@@ -21,22 +26,22 @@ class NewProject extends React.Component {
         }
     }
 
-    render(){
+    changeHandler = e => {
+        console.log(e.target.id)
+    }
+
+    render() {
         return (
-            <div>
-                <div>name as string</div>
-                <div>status is active: true or false</div>
-                <div>start date: choosing date</div>
-                <div>deadline: choosing date</div>
-                <div>repository link</div>
-                <div>online addres</div>
-                <div>project assumptions in arr</div>
-                <div>notes in arr</div>
-                <div>to do in obj</div>
-            </div>
+            <form>
+                <FormGenerator
+                    formDataObj={formData.main}
+                    changeHandler={this.changeHandler}
+                />
+                <button>add project</button>
+            </form>
         )
     }
-    
+
 }
 
 export default NewProject;

@@ -1,5 +1,4 @@
 import React, { useMemo } from 'react';
-import { connect } from 'react-redux';
 import { useQuery } from 'react-query';
 import { withRouter } from 'react-router-dom';
 
@@ -31,7 +30,7 @@ const Project = (props) => {
 
     return (
         <div>
-            <h4>{choosedProject.name}</h4>
+            <h4>{choosedProject.projectName}</h4>
             <ProjectDetails
                 project={choosedProject}
             />
