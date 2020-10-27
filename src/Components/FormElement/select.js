@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Select = ({ options }) => {
+const Select = ({ options, changeHandler, id }) => {
 
     const otpionsList = options.map(item => {
         return (
@@ -9,7 +9,9 @@ const Select = ({ options }) => {
     })
 
     return (
-        <select>
+        <select
+            id={id}
+            onChange={changeHandler} >
             {otpionsList}
         </select>
     );

@@ -9,13 +9,15 @@
         "projectStatus": {
             "elementType": "select",
             "label": "project status",
+            "value": "array",
             "options": [
                 "new",
                 "planing",
                 "production",
                 "finished",
                 "updating",
-                "bug fixing"
+                "bug fixing",
+                "canceled"
             ]
         },
         "projectStartDate": {
@@ -56,48 +58,62 @@
         },
         "toDo": {
             "elementType": "inputText",
-            "label": "project todos",
-            "placeholder": "todo",
+            "label": "project todos name",
+            "placeholder": "todo name",
             "numberOfInputs": 1,
+            "showDetails": false,
             "value": "object"
         }
     },
-    "secondary": {
-        "todoDetails": {
-            "isActive": true,
-            "todoStatus": {
-                "elementType": "select",
-                "label": "todo status",
-                "options": [
-                    "new",
-                    "in process",
-                    "resolved",
-                    "failed",
-                    "rejected"
-                ]
-            },
-            "priority":{
-                "elementType": "select",
-                "label": "priority",
-                "options": [
-                    "low",
-                    "medium",
-                    "high"
-                ]
-            },
-            "description":{
-                "elementType": "inputText",
-                "label": "project description",
-                "placeholder": "description",
-                "value": "string"
-            } ,
-            "toDoNote": {
-                "elementType": "inputText",
-                "label": "todo notes",
-                "placeholder": "todo note",
-                "numberOfInputs": 1,
-                "value": "array"
+    "secondary": [
+        {
+            "parent": "toDo",
+            "details": {
+                "isActive": {
+                    "value": "boolean",
+                    "defaultValue": true,
+                    "startValue": true
+                },
+                "status": {
+                    "elementType": "select",
+                    "label": "todo status",
+                    "value": "array",
+                    "options": [
+                        "new",
+                        "in process",
+                        "resolved",
+                        "failed",
+                        "rejected"
+                    ]
+                },
+                "priority": {
+                    "elementType": "select",
+                    "label": "priority",
+                    "value": "array",
+                    "options": [
+                        "low",
+                        "medium",
+                        "high"
+                    ]
+                },
+                "description": {
+                    "elementType": "inputText",
+                    "label": "to description",
+                    "placeholder": "description",
+                    "value": "string"
+                },
+                "note": {
+                    "elementType": "inputText",
+                    "label": "todo notes",
+                    "placeholder": "todo note",
+                    "numberOfInputs": 1,
+                    "value": "array"
+                }
             }
         }
+    ],
+    "controls": {
+        "temporaryValue": null,
+        "showToDoDetails": null
     }
 }

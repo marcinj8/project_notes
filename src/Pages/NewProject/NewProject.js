@@ -1,36 +1,53 @@
 import React from 'react';
 
+import { setUpState } from './DataNewProject';
 import { FormGenerator } from '../../Components';
 
 import formData from './newProjectProperties.json';
 
 class NewProject extends React.Component {
-    state = {
-        projectName: "",
-        projectStatus: "new, planing, production, finished",
-        isActive: true,
-        projectStartDate: "",
-        projectDeadLine: "",
-        repositoryLink: "link",
-        onlineAddrss: 'link',
-        projectAssumptions: [],
-        projectNotes: [],
-        toDo: {
-            "toDo 1": {
-                isActive: 'true false',
-                status: "new, in process, resolved, failed, rejected",
-                priority: "low medium high",
-                description: "toDo 1 description",
-                toDoNote: []
-            }
+    constructor(props) {
+        super(props);
+        this.state = setUpState(formData.main)
+    }
+
+    addToDo = toDoName => {
+        const toDoUpdated = {...this.state.toDo} || {};
+        toDoUpdated[toDoName] = {};
+        this.setState({
+            showToDoDetailsFrom: true,
+            toDo: toDoUpdated
+        })
+    }
+
+    setToDoDetail = (property, value) => {
+        const toDo = { ...this.state.toDo } || {};
+        console.log(property, value)
+        if (property === 'name') {
+            toDo[value] = {};
+            // const temporaryValueUpdated = identyfikacja za pomocą wartości numberOfInputs + numeracja toDo przy wprowadzaniu
         }
+        this.setState({
+            toDo: toDo
+        })
+        console.log(toDo)
+
     }
 
     changeHandler = e => {
-        console.log(e.target.id)
+        const isTodo = e.target.id.slice(0, 4);
+        if (isTodo === 'toDo') {
+            const toDoProperty = e.target.id.slice(4);
+            return this.setToDoDetail(toDoProperty, e.target.value);
+        }
+
+        this.setState({
+            [e.target.id]: e.target.value
+        })
     }
 
     render() {
+        console.log(this.state)
         return (
             <form>
                 <FormGenerator

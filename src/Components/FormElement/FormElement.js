@@ -34,23 +34,29 @@ const FormElement = ({ elementType, label, placeholder, options, changeHandler, 
                 return (
                     <Select
                         id={id}
-                        onChange={changeHandler}
+                        changeHandler={changeHandler}
                         options={options}
                         placeholder={placeholder}
                     />);
             default: return null;
         }
-    }, [elementType])
+    }, [elementType, changeHandler, placeholder, id, options])
 
     return (
-        <div>
-            {
-                label
-                    ? <label>{label} </label>
-                    : null
-            }
-            {formElement}
-        </div>
+        formElement === null
+            ? null
+            : (
+                <div
+                    key={id}
+                >
+                    {
+                        label
+                            ? <label>{label} </label>
+                            : null
+                    }
+                    {formElement}
+                </div>
+            )
     )
 }
 

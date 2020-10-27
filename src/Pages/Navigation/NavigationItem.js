@@ -6,17 +6,14 @@ import { NavigationItemStyled } from './Navigation.scss';
 
 const NavigationItem = ({ children, link, clicked, show, isExactRequired, projectKeyReducer }) => {
 
-    let activeLinkStyle = {
+    const activeLinkStyle = {
         fontWeight: "bold",
         color: 'gold'
     };
     const linkPath = useMemo(() => {
         if (link === '/project') {
             if (projectKeyReducer === '') {
-                activeLinkStyle = {
-                    fontWeight: "bold",
-                    color: 'red'
-                };
+                activeLinkStyle.color = 'red';
                 return '/choose_project';
             } else {
                 return link + '/' + projectKeyReducer;
@@ -25,7 +22,7 @@ const NavigationItem = ({ children, link, clicked, show, isExactRequired, projec
         else {
             return link;
         }
-    }, [projectKeyReducer, link])
+    }, [projectKeyReducer, link, activeLinkStyle])
 
     if (!show) {
         return null;
